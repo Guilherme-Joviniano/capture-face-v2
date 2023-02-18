@@ -39,13 +39,6 @@ root.render(
       <App ip='192.168.1.104'></App>
       <App ip='192.168.1.104'></App>
       <App ip='192.168.1.104'></App>
-      {/* <App ip='192.168.1.104'></App>
-      <App ip='192.168.1.104'></App>
-      <App ip='192.168.1.104'></App>
-      <App ip='192.168.1.104'></App>
-      <App ip='192.168.1.104'></App>
-      <App ip='192.168.1.104'></App>
-      <App ip='192.168.1.104'></App> */}
     </div>
   </React.StrictMode>
 );

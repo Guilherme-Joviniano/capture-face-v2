@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, FC, useState } from 'react';
 import './App.css'
+// @ts-ignore
 import { loadPlayer } from 'rtsp-relay/browser';
 
 interface IProps {
