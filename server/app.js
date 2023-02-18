@@ -7,7 +7,7 @@ const { proxy } = require('rtsp-relay')(app);
 app.ws('/api/stream/:cameraIP', (ws, req) => {
     proxy({
         url: `rtsp://${req.params.cameraIP}:8080/h264_ulaw.sdp`,
-        additionalFlags: ['-vf', 'scale=300:400']
+        additionalFlags: ['-vf', 'scale=533:400']
     })(ws)
 });
 

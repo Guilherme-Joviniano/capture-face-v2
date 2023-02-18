@@ -46,8 +46,12 @@ button:hover {
   align-items: center;
   gap: 40px;
 }
-.logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+
+
+.main {
+  display: flex;
+  gap: 100px;
+  width: 100vw;
+  height: auto;
+  margin: 0 auto;
 }

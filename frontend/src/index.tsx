@@ -27,20 +27,23 @@ const closeAllCams = () => {
 
 root.render(
   <React.StrictMode>
+    <div className='main'>
     <img src={logo} alt="" width={200} className='logo' />
     <div>
-      <h1>Monitoramento das Cameras</h1>
-      <div className='button-wrapper'>
-        <button onClick={openAllCams}>Ver todas as Cameras</button>
-        <button onClick={closeAllCams}>Fechar todas</button>
+      <div>
+        <h1>Monitoramento das Cameras</h1>
+        <div className='button-wrapper'>
+          <button onClick={openAllCams}>Ver todas as Cameras</button>
+          <button onClick={closeAllCams}>Fechar todas</button>
+        </div>
       </div>
-
+      <div className='videos-wrapper'>
+        <App ip='192.168.1.104'></App>
+        <App ip='192.168.1.104'></App>
+        <App ip='192.168.1.104'></App>
+        <App ip='192.168.1.104'></App>
+      </div>
     </div>
-    <div className='videos-wrapper'>
-      <App ip='192.168.1.104'></App>
-      <App ip='192.168.1.104'></App>
-      <App ip='192.168.1.104'></App>
-      <App ip='192.168.1.104'></App>
     </div>
   </React.StrictMode>
 );
