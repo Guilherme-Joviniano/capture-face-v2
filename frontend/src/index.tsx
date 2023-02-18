@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import logo from './logo.jpg'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -26,8 +27,9 @@ const closeAllCams = () => {
 
 root.render(
   <React.StrictMode>
+    <img src={logo} alt="" width={200} className='logo' />
     <div>
-      <h1>Monitoramento das Cameras 📷</h1>
+      <h1>Monitoramento das Cameras</h1>
       <div className='button-wrapper'>
         <button onClick={openAllCams}>Ver todas as Cameras</button>
         <button onClick={closeAllCams}>Fechar todas</button>
