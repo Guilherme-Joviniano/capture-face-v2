@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Carrousel from './Carrousel';
 import logo from './logo.jpg'
 import reportWebVitals from './reportWebVitals';
 
@@ -16,6 +17,8 @@ const openAllCams = () => {
     canvas.style.display = 'block'
   })
 }
+
+
 
 const closeAllCams = () => {
   const allCanvas = document.querySelectorAll('canvas');
@@ -32,6 +35,7 @@ root.render(
     <div>
       <div>
         <h1>Monitoramento das Cameras</h1>
+        <Carrousel />
         <div className='button-wrapper'>
           <button onClick={openAllCams}>Ver todas as Cameras</button>
           <button onClick={closeAllCams}>Fechar todas</button>
