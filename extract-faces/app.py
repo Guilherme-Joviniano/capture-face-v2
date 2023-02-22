@@ -27,7 +27,7 @@ def get_save_image_of_cams(ips):
         try: 
             cap = cv2.VideoCapture()
             cap.set(cv2.CAP_PROP_OPEN_TIMEOUT_MSEC, 3000)
-            cap.open(f'rtsp://{ip}:8080/h264_ulaw.sdp')
+            cap.open(f'rtsp://admin:{PASSWORD}@{ip}:554/live')
             ret, cam = cap.read()
             if ret:
                 cv2.imwrite(f'./cam/tmp/cam-{ip}.png', cam)
@@ -75,19 +75,22 @@ def not_in_db():
             continue
     return not_in_db
 
-get_save_image_of_cams(list_of_cams)
 
-for image in os.listdir('./cam/tmp/'):
-    ip = image.split('-')[1].split('png')[0][:-1]
-    detect_and_save_faces('./cam/tmp/' + image, ip)
+while True:
+    get_save_image_of_cams(list_of_cams)
 
-# TODO check in db and save!
-files = not_in_db()
+    for image in os.listdir('./cam/tmp/'):
+        ip = image.split('-')[1].split('png')[0][:-1]
+        detect_and_save_faces('./cam/tmp/' + image, ip)
 
-if len(files) > 0: 
-    for file in files:
-        shutil.move('./tmp/' + file, '../database/' + file)
-    os.remove('../database/representations_vgg_face.pkl')
+    # TODO check in db and save!
+    files = not_in_db()
+
+    if len(files) > 0: 
+        for file in files:
+            shutil.move('./tmp/' + file, '../database/' + file)
+        os.remove('../database/representations_vgg_face.pkl')
+    time.sleep(30)
     
 
 # TODO run every 30 seconds, and clean tmp folders
