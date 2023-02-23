@@ -13,7 +13,7 @@ export function getAllImages() {
 const Carrousel = () => {
     const [images, setImages] = useState([])
 
-    const MINUTE_MS = 100;
+    const MINUTE_MS = 60000;
     
     useEffect(() => {
         const interval = setInterval(() => {

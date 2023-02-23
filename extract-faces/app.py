@@ -8,7 +8,7 @@ import pandas as pd
 import os 
 import shutil
 
-list_of_cams = pd.read_csv("CAMS.csv", sep=',')['IPv4 Address']
+list_of_cams = pd.read_csv("../CAMS.csv", sep=',')['IPv4 Address']
 PASSWORD = ''
 
 backends = [
@@ -90,7 +90,7 @@ while True:
         for file in files:
             shutil.move('./tmp/' + file, '../database/' + file)
         os.remove('../database/representations_vgg_face.pkl')
-    time.sleep(30)
+    time.sleep(60)
     
 
 # TODO run every 30 seconds, and clean tmp folders

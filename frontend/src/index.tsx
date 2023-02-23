@@ -1,14 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Grid from './Grid';
 import Carrousel from './Carrousel';
 import logo from './logo.jpg'
 import reportWebVitals from './reportWebVitals';
+// @ts-ignore
+import csv from 'csvtojson';
+
+const read_cams = async () => {
+  const jsonArray = await csv().fromFile('../CAMS.csv');
+  return jsonArray
+}
+
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 
 
 const openAllCams = () => {
@@ -40,13 +50,9 @@ root.render(
           <button onClick={openAllCams}>Ver todas as Cameras</button>
           <button onClick={closeAllCams}>Fechar todas</button>
         </div>
+        <Grid />
       </div>
-      <div className='videos-wrapper'>
-        <App ip='192.168.1.104'></App>
-        <App ip='192.168.1.104'></App>
-        <App ip='192.168.1.104'></App>
-        <App ip='192.168.1.104'></App>
-      </div>
+      
     </div>
     </div>
   </React.StrictMode>
